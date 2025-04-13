@@ -1,0 +1,21 @@
+# sertifikat ini hanya untuk development di lokal, di production kamu harus menggunakan sertifikat asli
+
+[ req ]
+default_bits       = 2048
+prompt             = no
+default_md         = sha256
+req_extensions     = req_ext
+distinguished_name = dn
+
+[ dn ]
+C = ID
+ST = isi nama provinsi
+L = isi nama kota
+O = Streaming Co
+CN = localhost
+
+[ req_ext ]
+subjectAltName = @alt_names
+
+[ alt_names ]
+DNS.1 = localhost
