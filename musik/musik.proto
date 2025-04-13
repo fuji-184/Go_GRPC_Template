@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package musik;
+
+import "google/protobuf/empty.proto";
+
+option go_package = "github.com/fuji-184/streaming/musik";
+
+message Lagu {
+    string judul = 1;
+}
+
+service Musik {
+    rpc InfoLagu(google.protobuf.Empty) returns (Lagu) {}
+}

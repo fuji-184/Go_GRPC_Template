@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package hello;
+
+option go_package = "github.com/fuji-184/streaming/proto";
+
+service Hello {
+    rpc Menyapa (Isi) returns (Hasil) {}
+
+    // server streaming rpc
+    rpc MenyapaStreaming (Isi) returns (stream Hasil) {}
+}
+
+message Isi {
+    string pesan = 1;
+}
+
+message Hasil {
+    string balasan = 1;
+}
